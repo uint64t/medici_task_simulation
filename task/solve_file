@@ -1,0 +1,13 @@
+mesh in.f=grid.mesh
+
+
+model conmob fldmob srh impact.i
+symb newton carr=2
+method autonr stack=20 itlimit=10
+solve elec=a vstep=0.05 nstep=25
+solve elec=a vstep=1 nstep=4 previous
+$solve elec=a vstep=1 nstep=10 previous`
+
+solve out.f=iv
+
+stop

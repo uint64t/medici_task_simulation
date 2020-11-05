@@ -1,0 +1,104 @@
+1
+
+
+        ****************************************************************
+        ***                       MEDICI (TM)                        ***
+        ***                   Version D-2010.03-0                    ***
+        ***                   System K (PC: Linux)                   ***
+        ***                 Copyright (C) 1991-2010                  ***
+        ***                      Synopsys, Inc.                      ***
+        ***                                                          ***
+        ***   This software and the associated documentation are     ***
+        ***   confidential and proprietary to Synopsys, Inc.  Your   ***
+        ***   use or disclosure of this software is subject to the   ***
+        ***   terms and conditions of a written license agreement    ***
+        ***   between you, or your company, and Synopsys, Inc.       ***
+        ***                                                          ***
+        ***         MEDICI is a trademark of Synopsys, Inc.          ***
+        ****************************************************************
+
+                               5-Nov-2020 03:34:33
+
+
+     Statements input from file plot
+
+
+
+   1... mesh in.f=grid.mesh
+   2... load in.f=iv
+
+   3... plot.2d grid bound junc fill depl
+   4... contour flowline`
+   5... plot.1d doping x.sta=0 x.end=4 y.sta=0.5 y.end=0.5 log title="doping"
+
+   6... plot.1d in.f=solve_file.ivl x.ax=V(a) y.ax=i(a) left=0 right=2 title="anode"
+   7... plot.1d in.f=cathnode.ivl x.ax=V(k) y.ax=i(k) left=0 right=8 title="cathnode"
+   8... plot.1d in.f=cathnode.ivl x.ax=V(k) y.ax=i(k) left=0 right=6 title="breakdown"
+
+   9... $plot.1d in.f=test.ivl doping y.start=0.5 y.end=0.5 x.start=0 x.end=5 title="break dop"
+  10... $plot.2d bound junc fill depl
+  11... $contour flowline
+  12... $contour potentia color=6
+  13... $plot.1d doping y.start=0.5 y.end=0.5 title="break dop"
+
+ **************************** Program Configuration ****************************
+ *                                                                             *
+ * Programmable Device AAM  :       available for use                          *
+ * Circuit Analysis AAM     :       available for use                          *
+ * Lattice Temperature AAM  :       available for use                          *
+ * Heterojunction Device AAM:       available for use                          *
+ * Trapped Charge AAM       :       available for use                          *
+ * Anisotropic Material AAM :       available for use                          *
+ * Optical Device AAM       :       available for use                          *
+ *                                                                             *
+ * Maximum Nodes Available  :   10000                                          *
+ * Configuration Parameter  :   10000                                          *
+ *                                                                             *
+ * Approximate Number of Nodes Available for:                                  *
+ *   2-carrier solutions    :   10000                                          *
+ *   2-carrier + lat. temp. :    5727                                          *
+ *                                                                             *
+ *******************************************************************************
+
+ Grid read from grid.mesh
+ Date code =  5-Nov-2020 03:34:16
+
+ Mesh statistics (rectangular) :
+     Total grid points =   913
+     Total number of triangles =  1700
+     Obtuse triangles in semiconductors =   100  ( 5.9%)
+     Obtuse triangles in insul. & cond. =     0  ( 0.0%)
+
+    Region     Material      X-min        X-max        Y-min        Y-max
+     Name        Type      (microns)    (microns)    (microns)    (microns)
+ ------------  --------    ---------    ---------    ---------    ---------
+ psub          Silicon        0.0000       0.2000       0.0000       1.0000
+
+  Electrode     Number       X-min        X-max        Y-min        Y-max
+     Name      of Nodes    (microns)    (microns)    (microns)    (microns)
+ ------------  --------    ---------    ---------    ---------    ---------
+ A                51          0.0000       0.0000       0.0000       1.0000
+ K                51          0.2000       0.2000       0.0000       1.0000
+
+ Solution 1 read from iv
+ Date code =  5-Nov-2020 03:34:27
+
+
+ Two dimensional contour plot
+ Input line #       4
+
+   Values plotted:
+    4.024971E-20    4.025293E-16    8.050183E-16
+    1.207507E-15    1.609996E-15    2.012485E-15
+    2.414975E-15    2.817464E-15    3.219953E-15
+    3.622442E-15    4.024931E-15
+
+ Warning number   15 detected in line number   5
+ An ordinate value of zero was detected for a logarithmic plot.
+ This data point will be ignored.
+
+
+ *** END MEDICI ***
+
+
+ TOTAL CPU TIME =    0.02 minutes
