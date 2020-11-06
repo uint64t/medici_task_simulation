@@ -1,24 +1,24 @@
 Title test
 
 mesh smooth=1 out.f=task.mesh
-x.mesh width=0.15 h1=0.02
+x.mesh width=2 h1=0.05
 $x.mesh loc=-0.2 n=1
 $x.mesh loc=0 n=3
-y.mesh depth=1 h1=0.02
+y.mesh depth=1 h1=0.05
 
 region name=sio y.min=0 y.max=1 x.max=0 oxide
-region name=sio y.min=0 y.max=1 x.min=0.15 oxide
-region name=psub x.min=0 x.max=0.15 y.min=0 y.max=1 silicon
+region name=sio y.min=0 y.max=1 x.min=2 oxide
+region name=psub x.min=0 x.max=2 y.min=0 y.max=1 silicon
 
 electrode name=A y.min=0 y.max=1 x.max=0
-electrode name=K y.min=0 y.max=1 x.min=0.15
+electrode name=K y.min=0 y.max=1 x.min=2
 $electrode name=sub bottom
 
-profile region=psub p-type n.peak=1e17 x.min=0 x.max=0.075 uniform
-$profile region=psub p-type n.peak=1e20 x.min=0 x.max=0.025 uniform
+profile region=psub p-type n.peak=1e17 x.min=0 x.max=1 uniform
+profile region=psub p-type n.peak=1e20 x.min=0 x.max=0.025 uniform
 $profile region=psub p-type n.peak=1e20 y.junc=0.3 x.min=2 x.max=3 x.char=0.12
-profile n-type n.peak=1e17 x.min=0.075 x.max=0.15 uniform
-$profile n-type n.peak=1e20 x.min=0.175 x.max=0.2 uniform
+profile n-type n.peak=1e17 x.min=1 x.max=2 uniform
+profile n-type n.peak=1e20 x.min=1.975 x.max=2 uniform
 
 regrid doping log ratio=1 out.f=grid.mesh
 
