@@ -17,7 +17,7 @@
         ***         MEDICI is a trademark of Synopsys, Inc.          ***
         ****************************************************************
 
-                               5-Nov-2020 03:34:16
+                               5-Nov-2020 18:44:31
 
 
      Statements input from file grid
@@ -27,23 +27,23 @@
    1... Title test
 
    2... mesh smooth=1 out.f=task.mesh
-   3... x.mesh width=0.2 h1=0.02
+   3... x.mesh width=0.15 h1=0.02
    4... $x.mesh loc=-0.2 n=1
    5... $x.mesh loc=0 n=3
    6... y.mesh depth=1 h1=0.02
 
-   7... region name=sio y.min=0 y.max=0.1 x.max=0 oxide
-   8... region name=sio y.min=0 y.max=1 x.min=0.2 oxide
-   9... region name=psub x.min=0 x.max=0.2 y.min=0 y.max=1 silicon
+   7... region name=sio y.min=0 y.max=1 x.max=0 oxide
+   8... region name=sio y.min=0 y.max=1 x.min=0.15 oxide
+   9... region name=psub x.min=0 x.max=0.15 y.min=0 y.max=1 silicon
 
   10... electrode name=A y.min=0 y.max=1 x.max=0
-  11... electrode name=K y.min=0 y.max=1 x.min=0.2
+  11... electrode name=K y.min=0 y.max=1 x.min=0.15
   12... $electrode name=sub bottom
 
-  13... profile region=psub p-type n.peak=1e17 x.min=0 x.max=0.1 uniform
+  13... profile region=psub p-type n.peak=1e17 x.min=0 x.max=0.075 uniform
   14... $profile region=psub p-type n.peak=1e20 x.min=0 x.max=0.025 uniform
   15... $profile region=psub p-type n.peak=1e20 y.junc=0.3 x.min=2 x.max=3 x.char=0.12
-  16... profile n-type n.peak=1e17 x.min=0.1 x.max=0.2 uniform
+  16... profile n-type n.peak=1e17 x.min=0.075 x.max=0.15 uniform
   17... $profile n-type n.peak=1e20 x.min=0.175 x.max=0.2 uniform
 
   18... regrid doping log ratio=1 out.f=grid.mesh
@@ -95,28 +95,28 @@
  ****
 
  Mesh statistics (rectangular) :
-     Total grid points =   561
-     Total number of triangles =  1000
+     Total grid points =   408
+     Total number of triangles =   700
      Obtuse triangles in semiconductors =     0  ( 0.0%)
      Obtuse triangles in insul. & cond. =     0  ( 0.0%)
 
     Region     Material      X-min        X-max        Y-min        Y-max
      Name        Type      (microns)    (microns)    (microns)    (microns)
  ------------  --------    ---------    ---------    ---------    ---------
- psub          Silicon        0.0000       0.2000       0.0000       1.0000
+ psub          Silicon        0.0000       0.1500       0.0000       1.0000
 
   Electrode     Number       X-min        X-max        Y-min        Y-max
      Name      of Nodes    (microns)    (microns)    (microns)    (microns)
  ------------  --------    ---------    ---------    ---------    ---------
  A                51          0.0000       0.0000       0.0000       1.0000
- K                51          0.2000       0.2000       0.0000       1.0000
+ K                51          0.1500       0.1500       0.0000       1.0000
 
  Grid written to task.mesh
 
  Mesh statistics (rectangular) :
-     Total grid points =   913
-     Total number of triangles =  1700
-     Obtuse triangles in semiconductors =   100  ( 5.9%)
+     Total grid points =   609
+     Total number of triangles =  1100
+     Obtuse triangles in semiconductors =   100  ( 9.1%)
      Obtuse triangles in insul. & cond. =     0  ( 0.0%)
 
  Grid written to grid.mesh

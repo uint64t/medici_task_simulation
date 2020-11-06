@@ -17,7 +17,7 @@
         ***         MEDICI is a trademark of Synopsys, Inc.          ***
         ****************************************************************
 
-                               5-Nov-2020 03:34:33
+                               5-Nov-2020 18:44:14
 
 
      Statements input from file plot
@@ -32,7 +32,7 @@
    5... plot.1d doping x.sta=0 x.end=4 y.sta=0.5 y.end=0.5 log title="doping"
 
    6... plot.1d in.f=solve_file.ivl x.ax=V(a) y.ax=i(a) left=0 right=2 title="anode"
-   7... plot.1d in.f=cathnode.ivl x.ax=V(k) y.ax=i(k) left=0 right=8 title="cathnode"
+   7... plot.1d in.f=cathnode.ivl x.ax=V(k) y.ax=i(k) left=0 right=10 title="cathnode"
    8... plot.1d in.f=cathnode.ivl x.ax=V(k) y.ax=i(k) left=0 right=6 title="breakdown"
 
    9... $plot.1d in.f=test.ivl doping y.start=0.5 y.end=0.5 x.start=0 x.end=5 title="break dop"
@@ -61,37 +61,37 @@
  *******************************************************************************
 
  Grid read from grid.mesh
- Date code =  5-Nov-2020 03:34:16
+ Date code =  5-Nov-2020 18:30:06
 
  Mesh statistics (rectangular) :
-     Total grid points =   913
-     Total number of triangles =  1700
-     Obtuse triangles in semiconductors =   100  ( 5.9%)
+     Total grid points =   609
+     Total number of triangles =  1100
+     Obtuse triangles in semiconductors =   100  ( 9.1%)
      Obtuse triangles in insul. & cond. =     0  ( 0.0%)
 
     Region     Material      X-min        X-max        Y-min        Y-max
      Name        Type      (microns)    (microns)    (microns)    (microns)
  ------------  --------    ---------    ---------    ---------    ---------
- psub          Silicon        0.0000       0.2000       0.0000       1.0000
+ psub          Silicon        0.0000       0.1500       0.0000       1.0000
 
   Electrode     Number       X-min        X-max        Y-min        Y-max
      Name      of Nodes    (microns)    (microns)    (microns)    (microns)
  ------------  --------    ---------    ---------    ---------    ---------
  A                51          0.0000       0.0000       0.0000       1.0000
- K                51          0.2000       0.2000       0.0000       1.0000
+ K                51          0.1500       0.1500       0.0000       1.0000
 
  Solution 1 read from iv
- Date code =  5-Nov-2020 03:34:27
+ Date code =  5-Nov-2020 18:30:18
 
 
  Two dimensional contour plot
  Input line #       4
 
    Values plotted:
-    4.024971E-20    4.025293E-16    8.050183E-16
-    1.207507E-15    1.609996E-15    2.012485E-15
-    2.414975E-15    2.817464E-15    3.219953E-15
-    3.622442E-15    4.024931E-15
+    7.508448E-20    7.509048E-16    1.501735E-15
+    2.252564E-15    3.003394E-15    3.754224E-15
+    4.505054E-15    5.255883E-15    6.006713E-15
+    6.757543E-15    7.508373E-15
 
  Warning number   15 detected in line number   5
  An ordinate value of zero was detected for a logarithmic plot.
@@ -101,4 +101,4 @@
  *** END MEDICI ***
 
 
- TOTAL CPU TIME =    0.02 minutes
+ TOTAL CPU TIME =    0.03 minutes
