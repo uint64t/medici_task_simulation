@@ -1,0 +1,24 @@
+mesh in.f=grid.mesh
+
+model conmob fldmob srh impact.i
+symb newton carr=2
+method autonr stack=20 itlimit=10
+
+contact name=B current
+solve elec=B I(B)=1e-12 
+solve elec=B I(B)=1e-9
+
+$ the first one(the top)
+solve elec=B I(B)=1e-6
+
+$ the second one (middle)
+$solve elec=B i(B)=8e-7
+
+$ the third one (bottom)
+solve elec=B i(B)=5e-7
+solve elec=C V(C)=0 vstep=0.1 nstep=50
+$solve elec=a vstep=1 nstep=10 previous`
+
+solve out.f=iv
+
+stop

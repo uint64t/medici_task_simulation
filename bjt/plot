@@ -7,8 +7,9 @@ $contour flowline`
 plot.1d doping log x.sta=4.5 x.end=4.5 y.sta=0 y.end=10 title="doping_p"
 plot.1d doping log x.sta=7.5 x.end=7.5 y.sta=0 y.end=10 title="doping_n"
 
-$plot.1d in.f=solve_file.ivl x.ax=V(a) y.ax=i(a) left=0 right=2 title="anode"
-$plot.1d in.f=cathnode.ivl x.ax=V(k) y.ax=i(k) left=0 right=10 title="cathnode"
+plot.1d in.f=common_emitter.ivl x.ax=V(C) y.ax=i(C) left=0 right=5 title="emitter"
+plot.1d in.f=common_emitter1.ivl x.ax=V(C) y.ax=i(C) left=0 right=5 unchanged
+plot.1d in.f=common_emitter2.ivl x.ax=V(C) y.ax=i(C) left=0 right=5 unchanged 
 $plot.1d in.f=cathnode.ivl x.ax=V(k) y.ax=i(k) left=0 right=6 title="breakdown"
 
 $plot.1d in.f=test.ivl doping y.start=0.5 y.end=0.5 x.start=0 x.end=5 title="break dop"

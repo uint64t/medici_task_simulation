@@ -1,6 +1,6 @@
 Title test
 
-mesh smooth=1 out.f=grid.mesh
+mesh smooth=1 out.f=pure.mesh
 x.mesh width=12 h1=0.125
 y.mesh loc=-0.2 n=1
 y.mesh loc=0 n=3
@@ -16,7 +16,7 @@ electrode name=C bottom
 
 profile region=nsub n-type n.peak=3e15 uniform
 profile region=nsub p-type n.peak=6e17 y.char=0.16 x.min=2 x.max=10 y.min=0.35
-profile region=nsub p-type n.peak=4e18 y.min=0 x.min=4 x.max=5 y.char=0.16
+profile region=nsub p-type n.peak=4e18 y.min=0 x.min=2 x.max=10 y.char=0.16
 profile region=nsub n-type n.peak=7e19 y.min=0 x.min=7 x.max=8 y.char=0.16
 profile region=nsub n-type n.peak=1e19 y.min=2 y.char=0.27 
 

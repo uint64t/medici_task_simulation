@@ -17,7 +17,7 @@
         ***         MEDICI is a trademark of Synopsys, Inc.          ***
         ****************************************************************
 
-                               8-Nov-2020 23:23:16
+                               9-Nov-2020 00:35:58
 
 
      Statements input from file plot
@@ -33,15 +33,16 @@
    6... plot.1d doping log x.sta=4.5 x.end=4.5 y.sta=0 y.end=10 title="doping_p"
    7... plot.1d doping log x.sta=7.5 x.end=7.5 y.sta=0 y.end=10 title="doping_n"
 
-   8... $plot.1d in.f=solve_file.ivl x.ax=V(a) y.ax=i(a) left=0 right=2 title="anode"
-   9... $plot.1d in.f=cathnode.ivl x.ax=V(k) y.ax=i(k) left=0 right=10 title="cathnode"
-  10... $plot.1d in.f=cathnode.ivl x.ax=V(k) y.ax=i(k) left=0 right=6 title="breakdown"
+   8... plot.1d in.f=common_emitter.ivl x.ax=V(C) y.ax=i(C) left=0 right=5 title="emitter"
+   9... plot.1d in.f=common_emitter1.ivl x.ax=V(C) y.ax=i(C) left=0 right=5 unchanged
+  10... plot.1d in.f=common_emitter2.ivl x.ax=V(C) y.ax=i(C) left=0 right=5 unchanged
+  11... $plot.1d in.f=cathnode.ivl x.ax=V(k) y.ax=i(k) left=0 right=6 title="breakdown"
 
-  11... $plot.1d in.f=test.ivl doping y.start=0.5 y.end=0.5 x.start=0 x.end=5 title="break dop"
-  12... $plot.2d bound junc fill depl
-  13... $contour flowline
-  14... $contour potentia color=6
-  15... $plot.1d doping y.start=0.5 y.end=0.5 title="break dop"
+  12... $plot.1d in.f=test.ivl doping y.start=0.5 y.end=0.5 x.start=0 x.end=5 title="break dop"
+  13... $plot.2d bound junc fill depl
+  14... $contour flowline
+  15... $contour potentia color=6
+  16... $plot.1d doping y.start=0.5 y.end=0.5 title="break dop"
 
  **************************** Program Configuration ****************************
  *                                                                             *
@@ -63,13 +64,13 @@
  *******************************************************************************
 
  Grid read from grid.mesh
- Date code =  8-Nov-2020 23:21:55
+ Date code =  9-Nov-2020 00:19:19
 
  Mesh statistics (rectangular) :
-     Total grid points =  2430
-     Total number of triangles =  4630
-     Obtuse triangles in semiconductors =   221  ( 4.8%)
-     Obtuse triangles in insul. & cond. =    45  ( 1.0%)
+     Total grid points =  2299
+     Total number of triangles =  4368
+     Obtuse triangles in semiconductors =   188  ( 4.3%)
+     Obtuse triangles in insul. & cond. =    10  ( 0.2%)
 
     Region     Material      X-min        X-max        Y-min        Y-max
      Name        Type      (microns)    (microns)    (microns)    (microns)
@@ -96,4 +97,4 @@
  *** END MEDICI ***
 
 
- TOTAL CPU TIME =    0.03 minutes
+ TOTAL CPU TIME =    0.02 minutes

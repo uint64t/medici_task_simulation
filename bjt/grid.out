@@ -17,7 +17,7 @@
         ***         MEDICI is a trademark of Synopsys, Inc.          ***
         ****************************************************************
 
-                               8-Nov-2020 23:21:55
+                               9-Nov-2020 00:19:19
 
 
      Statements input from file grid
@@ -26,7 +26,7 @@
 
    1... Title test
 
-   2... mesh smooth=1 out.f=grid.mesh
+   2... mesh smooth=1 out.f=pure.mesh
    3... x.mesh width=12 h1=0.125
    4... y.mesh loc=-0.2 n=1
    5... y.mesh loc=0 n=3
@@ -42,7 +42,7 @@
 
   13... profile region=nsub n-type n.peak=3e15 uniform
   14... profile region=nsub p-type n.peak=6e17 y.char=0.16 x.min=2 x.max=10 y.min=0.35
-  15... profile region=nsub p-type n.peak=4e18 y.min=0 x.min=4 x.max=5 y.char=0.16
+  15... profile region=nsub p-type n.peak=4e18 y.min=0 x.min=2 x.max=10 y.char=0.16
   16... profile region=nsub n-type n.peak=7e19 y.min=0 x.min=7 x.max=8 y.char=0.16
   17... profile region=nsub n-type n.peak=1e19 y.min=2 y.char=0.27
 
@@ -115,13 +115,13 @@
  E                27          7.0000       8.0000      -0.2000       0.0000
  C                97          0.0000      12.0000       2.0000       2.0000
 
- Grid written to grid.mesh
+ Grid written to pure.mesh
 
  Mesh statistics (rectangular) :
-     Total grid points =  2430
-     Total number of triangles =  4630
-     Obtuse triangles in semiconductors =   221  ( 4.8%)
-     Obtuse triangles in insul. & cond. =    45  ( 1.0%)
+     Total grid points =  2299
+     Total number of triangles =  4368
+     Obtuse triangles in semiconductors =   188  ( 4.3%)
+     Obtuse triangles in insul. & cond. =    10  ( 0.2%)
 
  Grid written to grid.mesh
 
