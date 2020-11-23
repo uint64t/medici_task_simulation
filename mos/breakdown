@@ -1,0 +1,20 @@
+mesh in.f=grid.mesh
+
+model conmob fldmob srh impact.i
+symb newton carr=2
+method autonr stack=20 itlimit=10
+
+contact name=G n.poly
+
+solve 
+solve elec=S V(S)=0
+solve elec=G V(G)=0
+solve elec=B V(B)=0
+
+solve continue elec=D V(D)=0 c.vstep=1e-3 c.imax=1e-3 c.vmax=40
+$solve elec=D V(D) vstep=0.01 nstep=22 previous
+
+extract ionizati
+
+solve out.f=iv
+

@@ -1,0 +1,92 @@
+1
+
+
+        ****************************************************************
+        ***                       MEDICI (TM)                        ***
+        ***                   Version D-2010.03-0                    ***
+        ***                   System K (PC: Linux)                   ***
+        ***                 Copyright (C) 1991-2010                  ***
+        ***                      Synopsys, Inc.                      ***
+        ***                                                          ***
+        ***   This software and the associated documentation are     ***
+        ***   confidential and proprietary to Synopsys, Inc.  Your   ***
+        ***   use or disclosure of this software is subject to the   ***
+        ***   terms and conditions of a written license agreement    ***
+        ***   between you, or your company, and Synopsys, Inc.       ***
+        ***                                                          ***
+        ***         MEDICI is a trademark of Synopsys, Inc.          ***
+        ****************************************************************
+
+                              23-Nov-2020 00:05:41
+
+
+     Statements input from file plot
+
+
+
+   1... mesh in.f=grid.mesh
+
+
+   2... plot.2d bound junc depl fill
+   3... plot.2d grid fill
+   4... plot.1d doping x.sta=0.5 x.end=0.5 title="x=0.5"
+   5... plot.1d doping x.sta=1.5 x.end=1.5 title="x=1.5"
+
+   6... plot.1d in.f=transfer.ivl x.ax=V(G) y.ax=I(D) title="tranfer when VDS=0.1"
+   7... plot.1d in.f=output.ivl x.ax=V(D) y.ax=I(D) title="output func when Vgs=1,0.8,0.5"
+   8... plot.1d in.f=output1.ivl x.ax=V(D) y.ax=I(D) col=2 unchanged
+   9... plot.1d in.f=output2.ivl x.ax=V(D) y.ax=I(D) col=3 unchanged
+  10... plot.1d in.f=breakdown.ivl x.ax=V(D) y.ax=I(D) ^order title="breakdown"
+
+ **************************** Program Configuration ****************************
+ *                                                                             *
+ * Programmable Device AAM  :       available for use                          *
+ * Circuit Analysis AAM     :       available for use                          *
+ * Lattice Temperature AAM  :       available for use                          *
+ * Heterojunction Device AAM:       available for use                          *
+ * Trapped Charge AAM       :       available for use                          *
+ * Anisotropic Material AAM :       available for use                          *
+ * Optical Device AAM       :       available for use                          *
+ *                                                                             *
+ * Maximum Nodes Available  :   20000                                          *
+ * Configuration Parameter  :   20000                                          *
+ *                                                                             *
+ * Approximate Number of Nodes Available for:                                  *
+ *   2-carrier solutions    :   20000                                          *
+ *   2-carrier + lat. temp. :   11454                                          *
+ *                                                                             *
+ *******************************************************************************
+
+ Grid read from grid.mesh
+ Date code = 23-Nov-2020 00:04:03
+
+ Mesh statistics (rectangular) :
+     Total grid points =   907
+     Total number of triangles =  1702
+     Obtuse triangles in semiconductors =    20  ( 1.2%)
+     Obtuse triangles in insul. & cond. =    18  ( 1.1%)
+
+    Region     Material      X-min        X-max        Y-min        Y-max
+     Name        Type      (microns)    (microns)    (microns)    (microns)
+ ------------  --------    ---------    ---------    ---------    ---------
+ psub          Silicon        0.0000       3.0000       0.0400       3.0400
+ sio           Oxide          0.8750       2.1250       0.0000       0.0400
+ S             Electrod       0.0000       0.8750       0.0000       0.0400
+ D             Electrod       2.1250       3.0000       0.0000       0.0400
+
+  Electrode     Number       X-min        X-max        Y-min        Y-max
+     Name      of Nodes    (microns)    (microns)    (microns)    (microns)
+ ------------  --------    ---------    ---------    ---------    ---------
+ S                47          0.0000       0.8750       0.0000       0.0400
+ G                 9          1.0000       2.0000       0.0000       0.0000
+ D                47          2.1250       3.0000       0.0000       0.0400
+ B                25          0.0000       3.0000       3.0400       3.0400
+
+ Warning number   88 detected in line number   2
+ Solution must be present for depletion edges.
+
+
+ *** END MEDICI ***
+
+
+ TOTAL CPU TIME =    0.02 minutes

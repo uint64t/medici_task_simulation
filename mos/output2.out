@@ -1,0 +1,1886 @@
+1
+
+
+        ****************************************************************
+        ***                       MEDICI (TM)                        ***
+        ***                   Version D-2010.03-0                    ***
+        ***                   System K (PC: Linux)                   ***
+        ***                 Copyright (C) 1991-2010                  ***
+        ***                      Synopsys, Inc.                      ***
+        ***                                                          ***
+        ***   This software and the associated documentation are     ***
+        ***   confidential and proprietary to Synopsys, Inc.  Your   ***
+        ***   use or disclosure of this software is subject to the   ***
+        ***   terms and conditions of a written license agreement    ***
+        ***   between you, or your company, and Synopsys, Inc.       ***
+        ***                                                          ***
+        ***         MEDICI is a trademark of Synopsys, Inc.          ***
+        ****************************************************************
+
+                              23-Nov-2020 00:04:31
+
+
+     Statements input from file output2
+
+
+
+   1... mesh in.f=grid.mesh
+
+   2... model conmob fldmob srh impact.i
+   3... symb newton carr=2
+   4... method autonr stack=20 itlimit=10
+
+   5... contact name=G n.poly
+
+   6... solve
+   7... solve elec=S V(S)=0
+   8... solve elec=G V(G)=0.5
+   9... solve elec=B V(B)=0
+
+  10... solve elec=D V(D) vstep=0.1 nstep=60
+
+  11... solve out.f=iv
+
+
+ **************************** Program Configuration ****************************
+ *                                                                             *
+ * Programmable Device AAM  :       available for use                          *
+ * Circuit Analysis AAM     :       available for use                          *
+ * Lattice Temperature AAM  :       available for use                          *
+ * Heterojunction Device AAM:       available for use                          *
+ * Trapped Charge AAM       :       available for use                          *
+ * Anisotropic Material AAM :       available for use                          *
+ * Optical Device AAM       :       available for use                          *
+ *                                                                             *
+ * Maximum Nodes Available  :   20000                                          *
+ * Configuration Parameter  :   20000                                          *
+ *                                                                             *
+ * Approximate Number of Nodes Available for:                                  *
+ *   2-carrier solutions    :   20000                                          *
+ *   2-carrier + lat. temp. :   11454                                          *
+ *                                                                             *
+ *******************************************************************************
+
+ Grid read from grid.mesh
+ Date code = 23-Nov-2020 00:04:03
+
+ Mesh statistics (rectangular) :
+     Total grid points =   907
+     Total number of triangles =  1702
+     Obtuse triangles in semiconductors =    20  ( 1.2%)
+     Obtuse triangles in insul. & cond. =    18  ( 1.1%)
+
+    Region     Material      X-min        X-max        Y-min        Y-max
+     Name        Type      (microns)    (microns)    (microns)    (microns)
+ ------------  --------    ---------    ---------    ---------    ---------
+ psub          Silicon        0.0000       3.0000       0.0400       3.0400
+ sio           Oxide          0.8750       2.1250       0.0000       0.0400
+ S             Electrod       0.0000       0.8750       0.0000       0.0400
+ D             Electrod       2.1250       3.0000       0.0000       0.0400
+
+  Electrode     Number       X-min        X-max        Y-min        Y-max
+     Name      of Nodes    (microns)    (microns)    (microns)    (microns)
+ ------------  --------    ---------    ---------    ---------    ---------
+ S                47          0.0000       0.8750       0.0000       0.0400
+ G                 9          1.0000       2.0000       0.0000       0.0000
+ D                47          2.1250       3.0000       0.0000       0.0400
+ B                25          0.0000       3.0000       3.0400       3.0400
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  0.0000000E+00
+   V(D)               =  0.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Initial solution
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    1.3908E+01  7.0605E+00  1.3908E+01     0
+  XR      2    1.2982E+01  1.1370E+00  1.7436E+01     0
+  XR      3    8.7830E+00  1.6389E+00  1.4767E+02     0
+  XR      4    1.6503E+00  3.2956E+00  1.6743E+02     0
+  XR      5    2.7633E-02  3.0929E-01  7.1558E+01     0
+  XR      6    0.0000E+00  1.1113E-02  9.6877E-01     0
+  XR      7    0.0000E+00  6.0670E-06  2.3493E-03     0
+  XR      8*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   4.4093E-17   4.4292E-26   4.8947E-31   4.4292E-26
+ G                0.0000E+00   3.6699E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                0.0000E+00   4.4093E-17   4.6911E-26   4.8946E-31   4.6912E-26
+ B                0.0000E+00  -2.1178E-31  -3.4517E-30  -9.1193E-26  -9.1196E-26
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.02 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  0.0000000E+00
+   V(D)               =  0.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Previous solution used as initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   4.4093E-17   1.4730E-30  -2.5489E-35   1.4730E-30
+ G                0.0000E+00   3.6699E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                0.0000E+00   4.4093E-17  -2.5010E-30  -4.8175E-35  -2.5010E-30
+ B                0.0000E+00  -1.9259E-31  -8.1262E-34  -1.2670E-31  -1.2751E-31
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.02 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  0.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Previous solution used as initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    1.0875E+01  9.8806E+00  9.3853E+00     0
+  XR      2    1.7236E+00  6.8980E+02  2.4673E+01     0
+  XR      3    5.6242E-01  8.6016E+00  1.0565E+00     0
+  XR      4    0.0000E+00  5.7309E-01  1.2964E+00     0
+  XR      5    0.0000E+00  9.7709E-03  4.6880E-02     0
+  XR      6*   0.0000E+00  9.0121E-06  9.0519E-06     0
+  XR      7    0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4710E-17   4.2965E-24  -4.5144E-38   4.2965E-24
+ G                5.0000E-01   6.6789E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                0.0000E+00   5.4710E-17  -4.2956E-24  -1.2045E-37  -4.2956E-24
+ B                0.0000E+00  -1.8059E-31   1.2953E-33   1.0539E-30   1.0552E-30
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  0.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Previous solution used as initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4710E-17   1.2271E-28  -3.9567E-36   1.2271E-28
+ G                5.0000E-01   6.6789E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                0.0000E+00   5.4710E-17  -1.2315E-28  -1.4731E-38  -1.2315E-28
+ B                0.0000E+00  -1.8299E-31   2.3900E-33  -8.9276E-32  -8.6886E-32
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  0.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Previous solution used as initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4710E-17   2.5167E-29   9.0203E-39   2.5167E-29
+ G                5.0000E-01   6.6789E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                0.0000E+00   5.4710E-17  -2.4924E-29  -4.8102E-36  -2.4924E-29
+ B                0.0000E+00  -1.7100E-31  -1.3437E-33  -1.0682E-31  -1.0816E-31
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.0000000E-01     V(B)               =  0.0000000E+00
+
+
+ Previous solution used as initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    3.6139E+00  2.3500E+00  2.7442E+00     0
+  XR      2    0.0000E+00  3.1586E+00  2.4194E+00     0
+  XR      3    0.0000E+00  1.3577E-01  1.4208E-01     0
+  XR      4*   0.0000E+00  5.0638E-04  7.2039E-04     0
+  XR      5*   0.0000E+00  3.8411E-06  6.8757E-06     0
+  XR      6    0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4710E-17  -4.5983E-08  -1.7986E-30  -4.5983E-08
+ G                5.0000E-01   6.4249E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.0000E-01   5.2591E-17   4.5983E-08   4.0814E-22   4.5983E-08
+ B                0.0000E+00  -2.8061E-27  -1.2797E-17  -1.0197E-15  -1.0325E-15
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.0000000E-01     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.4910E+00  1.4777E-01     0
+  XR      2    0.0000E+00  1.6402E-01  1.2191E-02     0
+  XR      3*   0.0000E+00  3.4220E-04  2.1215E-06     0
+  XR      4*   0.0000E+00  1.0381E-08  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4710E-17  -5.4043E-08  -2.1650E-30  -5.4043E-08
+ G                5.0000E-01   6.2049E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.0000E-01   5.0465E-17   5.4043E-08   4.1439E-22   5.4043E-08
+ B                0.0000E+00  -3.9929E-27  -1.3389E-17  -1.4529E-15  -1.4663E-15
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.0000000E-01     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.2766E+00  1.3573E-01     0
+  XR      2    0.0000E+00  3.5579E-02  6.8554E-03     0
+  XR      3*   0.0000E+00  6.8997E-06  1.6578E-06     0
+  XR      4    0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4710E-17  -6.0347E-08  -2.4486E-30  -6.0347E-08
+ G                5.0000E-01   5.9958E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.0000E-01   4.8335E-17   6.0347E-08   1.1811E-22   6.0347E-08
+ B                0.0000E+00  -4.8755E-27  -1.3698E-17  -1.7751E-15  -1.7888E-15
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.0000000E-01     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.0791E+00  1.5147E-01     0
+  XR      2    0.0000E+00  6.0436E-03  1.0200E-02     0
+  XR      3*   0.0000E+00  2.0282E-05  2.2436E-06     0
+  XR      4*   0.0000E+00  5.6898E-08  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4710E-17  -6.6483E-08  -2.7265E-30  -6.6483E-08
+ G                5.0000E-01   5.7926E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.0000E-01   4.6202E-17   6.6483E-08  -8.3733E-22   6.6483E-08
+ B                0.0000E+00  -5.8079E-27  -1.3988E-17  -2.1155E-15  -2.1295E-15
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.0000000E-01     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  8.4509E-01  1.3728E-01     0
+  XR      2    0.0000E+00  1.8121E-02  8.9474E-03     0
+  XR      3*   0.0000E+00  6.0937E-05  1.2952E-06     0
+  XR      4*   0.0000E+00  1.4236E-07  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4710E-17  -7.2588E-08  -3.0276E-30  -7.2588E-08
+ G                5.0000E-01   5.5962E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.0000E-01   4.4067E-17   7.2588E-08  -4.1689E-21   7.2588E-08
+ B                0.0000E+00  -7.0977E-27  -1.4267E-17  -2.5865E-15  -2.6008E-15
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  6.0000000E-01     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.4283E-01  1.0379E-01     0
+  XR      2    0.0000E+00  3.2742E-02  4.9262E-03     0
+  XR      3*   0.0000E+00  5.0163E-05  3.0646E-07     0
+  XR      4*   0.0000E+00  5.0322E-09  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4710E-17  -7.8704E-08  -3.3893E-30  -7.8704E-08
+ G                5.0000E-01   5.4076E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                6.0000E-01   4.1928E-17   7.8704E-08  -1.5690E-20   7.8704E-08
+ B                0.0000E+00  -8.7805E-27  -1.4535E-17  -3.2010E-15  -3.2155E-15
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  7.0000000E-01     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.5335E-01  8.2715E-02     0
+  XR      2    0.0000E+00  1.7565E-02  2.9616E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  1.2962E-07     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -8.4934E-08  -3.9058E-30  -8.4934E-08
+ G                5.0000E-01   5.2245E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                7.0000E-01   3.9786E-17   8.4934E-08  -5.6336E-20   8.4934E-08
+ B                0.0000E+00  -1.0072E-26  -1.4794E-17  -3.6726E-15  -3.6874E-15
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  8.0000000E-01     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  3.8566E-01  7.9421E-02     0
+  XR      2    0.0000E+00  4.8827E-03  2.0759E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  1.4204E-07     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -9.1401E-08  -5.2771E-30  -9.1401E-08
+ G                5.0000E-01   5.0434E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                8.0000E-01   3.7644E-17   9.1401E-08  -2.4296E-19   9.1401E-08
+ B                0.0000E+00  -1.1296E-26  -1.5048E-17  -4.1194E-15  -4.1344E-15
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  9.0000000E-01     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  4.3434E-01  9.3522E-02     0
+  XR      2    0.0000E+00  1.8266E-04  3.1796E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  3.5384E-07     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -9.8178E-08  -1.1375E-29  -9.8178E-08
+ G                5.0000E-01   4.8624E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                9.0000E-01   3.5501E-17   9.8178E-08  -1.3170E-18   9.8178E-08
+ B                0.0000E+00  -1.3818E-26  -1.5297E-17  -5.0403E-15  -5.0556E-15
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  5.3886E-01  1.0088E-01     0
+  XR      2    0.0000E+00  1.7213E-04  4.2326E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  4.2418E-07     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -1.0531E-07  -4.3398E-29  -1.0531E-07
+ G                5.0000E-01   4.6810E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.0000E+00   3.3358E-17   1.0531E-07  -7.0725E-18   1.0531E-07
+ B                0.0000E+00  -2.2550E-26  -1.5542E-17  -8.2295E-15  -8.2451E-15
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.1000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.7491E-01  9.4895E-02     0
+  XR      2    0.0000E+00  1.3077E-04  4.0101E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  1.9365E-07     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -1.1281E-07  -2.0225E-28  -1.1281E-07
+ G                5.0000E-01   4.4990E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.1000E+00   3.1215E-17   1.1281E-07  -3.2348E-17   1.1281E-07
+ B                0.0000E+00  -5.4754E-26  -1.5784E-17  -1.9992E-14  -2.0007E-14
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.03 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.2000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  8.2730E-02  7.8620E-02     0
+  XR      2    0.0000E+00  9.0524E-05  2.7376E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -1.2072E-07  -8.9294E-28  -1.2072E-07
+ G                5.0000E-01   4.3163E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.2000E+00   2.9072E-17   1.2072E-07  -1.2312E-16   1.2072E-07
+ B                0.0000E+00  -1.6211E-25  -1.6021E-17  -5.9203E-14  -5.9219E-14
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.3000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  3.0181E-02  6.5637E-02     0
+  XR      2    0.0000E+00  7.0611E-05  1.8529E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -1.2907E-07  -3.5072E-27  -1.2907E-07
+ G                5.0000E-01   4.1330E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.3000E+00   2.6929E-17   1.2907E-07  -3.9732E-16   1.2907E-07
+ B                0.0000E+00  -4.7883E-25  -1.6253E-17  -1.7488E-13  -1.7490E-13
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.4000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.6956E-02  5.6936E-02     0
+  XR      2    0.0000E+00  6.5200E-05  1.3516E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -1.3788E-07  -1.2237E-26  -1.3788E-07
+ G                5.0000E-01   3.9492E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.4000E+00   2.4786E-17   1.3788E-07  -1.1138E-15   1.3788E-07
+ B                0.0000E+00  -1.3120E-24  -1.6483E-17  -4.7919E-13  -4.7921E-13
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.5000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.4663E-02  1.7430E-01     0
+  XR      2    0.0000E+00  6.9619E-05  1.0552E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -1.4717E-07  -3.8343E-26  -1.4717E-07
+ G                5.0000E-01   3.7647E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.5000E+00   2.2643E-17   1.4718E-07  -2.7696E-15   1.4718E-07
+ B                0.0000E+00  -3.2824E-24  -1.6709E-17  -1.1989E-12  -1.1989E-12
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.6000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.5256E-02  3.1415E-01     0
+  XR      2    0.0000E+00  7.4617E-05  1.3827E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -1.5700E-07  -1.0903E-25  -1.5700E-07
+ G                5.0000E-01   3.5798E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.6000E+00   2.0501E-17   1.5700E-07  -6.2054E-15   1.5700E-07
+ B                0.0000E+00  -7.4954E-24  -1.6934E-17  -2.7376E-12  -2.7377E-12
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.7000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  3.0235E-02  1.8135E-01     0
+  XR      2    0.0000E+00  7.3250E-05  1.8408E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -1.6738E-07  -2.8396E-25  -1.6738E-07
+ G                5.0000E-01   3.3943E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.7000E+00   1.8358E-17   1.6739E-07  -1.2676E-14   1.6739E-07
+ B                0.0000E+00  -1.5695E-23  -1.7156E-17  -5.7325E-12  -5.7325E-12
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.8000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  3.0973E-02  2.1982E-01     0
+  XR      2    0.0000E+00  1.4248E-05  1.9845E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -1.7837E-07  -6.8372E-25  -1.7837E-07
+ G                5.0000E-01   3.2082E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.8000E+00   1.6215E-17   1.7838E-07  -2.3834E-14   1.7838E-07
+ B                0.0000E+00  -3.0354E-23  -1.7377E-17  -1.1087E-11  -1.1087E-11
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  1.9000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.4554E-02  3.3194E-01     0
+  XR      2    0.0000E+00  6.2824E-07  1.6856E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -1.8999E-07  -1.5377E-24  -1.8999E-07
+ G                5.0000E-01   3.0217E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                1.9000E+00   1.4073E-17   1.9001E-07  -4.1614E-14   1.9001E-07
+ B                0.0000E+00  -5.4717E-23  -1.7595E-17  -1.9985E-11  -1.9985E-11
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  3.0594E-02  4.4746E-01     0
+  XR      2    0.0000E+00  5.6295E-07  1.2356E-03     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -2.0230E-07  -3.2472E-24  -2.0230E-07
+ G                5.0000E-01   2.8347E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.0000E+00   1.1930E-17   2.0233E-07  -6.8049E-14   2.0233E-07
+ B                0.0000E+00  -9.2973E-23  -1.7811E-17  -3.3958E-11  -3.3958E-11
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.1000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  3.0120E-02  2.4560E-01     0
+  XR      2    0.0000E+00  5.0832E-07  9.5081E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -2.1532E-07  -6.4728E-24  -2.1532E-07
+ G                5.0000E-01   2.6472E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.1000E+00   9.7873E-18   2.1537E-07  -1.0501E-13   2.1537E-07
+ B                0.0000E+00  -1.5065E-22  -1.8025E-17  -5.5023E-11  -5.5023E-11
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.2000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.5886E-02  1.1554E-01     0
+  XR      2    0.0000E+00  4.7037E-07  7.4880E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -2.2909E-07  -1.2292E-23  -2.2909E-07
+ G                5.0000E-01   2.4592E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.2000E+00   7.6447E-18   2.2918E-07  -1.5373E-13   2.2918E-07
+ B                0.0000E+00  -2.3480E-22  -1.8237E-17  -8.5760E-11  -8.5760E-11
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.3000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.8108E-02  2.3896E-01     0
+  XR      2    0.0000E+00  4.4872E-07  6.0680E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -2.4366E-07  -2.2359E-23  -2.4366E-07
+ G                5.0000E-01   2.2708E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.3000E+00   5.5022E-18   2.4379E-07  -2.1401E-13   2.4379E-07
+ B                0.0000E+00  -3.5361E-22  -1.8447E-17  -1.2915E-10  -1.2915E-10
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.4000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.8595E-02  2.8991E-01     0
+  XR      2    0.0000E+00  4.3878E-07  5.5656E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -2.5907E-07  -3.9067E-23  -2.5907E-07
+ G                5.0000E-01   2.0821E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.4000E+00   3.3597E-18   2.5926E-07  -2.8316E-13   2.5926E-07
+ B                0.0000E+00  -5.1554E-22  -1.8656E-17  -1.8830E-10  -1.8830E-10
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.5000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.4750E-02  2.4145E-01     0
+  XR      2    0.0000E+00  4.3311E-07  7.6293E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -2.7537E-07  -6.5750E-23  -2.7537E-07
+ G                5.0000E-01   1.8929E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.5000E+00   1.2171E-18   2.7564E-07  -3.5538E-13   2.7564E-07
+ B                0.0000E+00  -7.2873E-22  -1.8863E-17  -2.6617E-10  -2.6617E-10
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.6000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.9351E-02  3.1797E-01     0
+  XR      2    0.0000E+00  4.2349E-07  9.3268E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -2.9260E-07  -1.0644E-22  -2.9260E-07
+ G                5.0000E-01   1.7033E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.6000E+00  -9.2534E-19   2.9296E-07  -4.2280E-13   2.9296E-07
+ B                0.0000E+00  -1.0014E-21  -1.9071E-17  -3.6574E-10  -3.6574E-10
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.04 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.7000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.4147E-02  2.2859E-01     0
+  XR      2    0.0000E+00  4.0495E-07  9.7926E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -3.1081E-07  -1.6728E-22  -3.1081E-07
+ G                5.0000E-01   1.5133E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.7000E+00  -3.0678E-18   3.1130E-07  -4.7930E-13   3.1130E-07
+ B                0.0000E+00  -1.3442E-21  -1.9277E-17  -4.9095E-10  -4.9095E-10
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.8000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.0284E-02  3.0786E-01     0
+  XR      2    0.0000E+00  1.4894E-09  8.7213E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4711E-17  -3.3005E-07  -2.5804E-22  -3.3005E-07
+ G                5.0000E-01   1.3230E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.8000E+00  -5.2102E-18   3.3069E-07  -5.2635E-13   3.3069E-07
+ B                0.0000E+00  -1.7747E-21  -1.9482E-17  -6.4820E-10  -6.4820E-10
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  2.9000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.1525E-02  2.2075E-01     0
+  XR      2    0.0000E+00  1.3474E-09  6.9953E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -3.5037E-07  -3.9463E-22  -3.5037E-07
+ G                5.0000E-01   1.1323E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                2.9000E+00  -7.3527E-18   3.5122E-07  -5.7615E-13   3.5122E-07
+ B                0.0000E+00  -2.3206E-21  -1.9686E-17  -8.4759E-10  -8.4759E-10
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.0623E-02  1.2398E-01     0
+  XR      2    0.0000E+00  1.2201E-09  5.6858E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -3.7183E-07  -6.0230E-22  -3.7183E-07
+ G                5.0000E-01   9.4132E-17   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.0000E+00  -9.4951E-18   3.7293E-07  -6.4690E-13   3.7293E-07
+ B                0.0000E+00  -3.0171E-21  -1.9889E-17  -1.1020E-09  -1.1020E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.1000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.2860E-02  6.0004E-02     0
+  XR      2    0.0000E+00  1.1165E-09  4.7237E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -3.9447E-07  -9.1784E-22  -3.9447E-07
+ G                5.0000E-01   7.4999E-17   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.1000E+00  -1.1637E-17   3.9590E-07  -7.5285E-13   3.9590E-07
+ B                0.0000E+00  -3.8992E-21  -2.0091E-17  -1.4242E-09  -1.4242E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.2000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.0774E-02  1.3785E-01     0
+  XR      2    0.0000E+00  1.0380E-09  3.8751E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -4.1836E-07  -1.3925E-21  -4.1836E-07
+ G                5.0000E-01   5.5835E-17   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.2000E+00  -1.3780E-17   4.2018E-07  -8.9839E-13   4.2018E-07
+ B                0.0000E+00  -4.9974E-21  -2.0292E-17  -1.8253E-09  -1.8253E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.3000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.3993E-02  2.2102E-01     0
+  XR      2    0.0000E+00  9.8093E-10  3.4351E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -4.4354E-07  -2.1010E-21  -4.4354E-07
+ G                5.0000E-01   3.6641E-17   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.3000E+00  -1.5922E-17   4.4586E-07  -1.0797E-12   4.4586E-07
+ B                0.0000E+00  -6.3377E-21  -2.0493E-17  -2.3148E-09  -2.3148E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.4000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.6426E-02  2.0947E-01     0
+  XR      2    0.0000E+00  9.3840E-10  2.9286E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -4.7007E-07  -3.1311E-21  -4.7007E-07
+ G                5.0000E-01   1.7417E-17   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.4000E+00  -1.8065E-17   4.7298E-07  -1.2891E-12   4.7297E-07
+ B                0.0000E+00  -7.9440E-21  -2.0694E-17  -2.9015E-09  -2.9015E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.5000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.2348E-02  1.6311E-01     0
+  XR      2    0.0000E+00  9.0037E-10  3.6925E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -4.9801E-07  -4.6032E-21  -4.9801E-07
+ G                5.0000E-01  -1.8361E-18   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.5000E+00  -2.0207E-17   5.0160E-07  -1.5163E-12   5.0160E-07
+ B                0.0000E+00  -9.8381E-21  -2.0895E-17  -3.5933E-09  -3.5933E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.6000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.9031E-02  1.4989E-01     0
+  XR      2    0.0000E+00  2.8905E-07  4.5399E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -5.2739E-07  -6.6670E-21  -5.2739E-07
+ G                5.0000E-01  -2.1118E-17   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.6000E+00  -2.2349E-17   5.3179E-07  -1.7477E-12   5.3179E-07
+ B                0.0000E+00  -1.2036E-20  -2.1096E-17  -4.3962E-09  -4.3962E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.7000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  3.5705E-02  2.1158E-01     0
+  XR      2    0.0000E+00  3.4254E-06  5.0553E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -5.5828E-07  -9.4982E-21  -5.5828E-07
+ G                5.0000E-01  -4.0428E-17   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.7000E+00  -2.4491E-17   5.6360E-07  -1.9654E-12   5.6360E-07
+ B                0.0000E+00  -1.4548E-20  -2.1298E-17  -5.3137E-09  -5.3137E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.8000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  4.1208E-02  1.9155E-01     0
+  XR      2    0.0000E+00  3.6814E-06  5.0192E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -5.9073E-07  -1.3294E-20  -5.9073E-07
+ G                5.0000E-01  -5.9765E-17   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.8000E+00  -2.6634E-17   5.9708E-07  -2.1481E-12   5.9708E-07
+ B                0.0000E+00  -1.7378E-20  -2.1500E-17  -6.3472E-09  -6.3472E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  3.9000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  4.4352E-02  1.1554E-01     0
+  XR      2    0.0000E+00  3.3330E-06  4.4444E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -6.2478E-07  -1.8279E-20  -6.2478E-07
+ G                5.0000E-01  -7.9128E-17   0.0000E+00   0.0000E+00   0.0000E+00
+ D                3.9000E+00  -2.8776E-17   6.3228E-07  -2.2771E-12   6.3228E-07
+ B                0.0000E+00  -2.0536E-20  -2.1702E-17  -7.5008E-09  -7.5008E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  4.4436E-02  7.8395E-02     0
+  XR      2    0.0000E+00  2.4569E-06  3.7705E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4712E-17  -6.6047E-07  -2.4952E-20  -6.6047E-07
+ G                5.0000E-01  -9.8516E-17   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.0000E+00  -3.0918E-17   6.6926E-07  -2.3448E-12   6.6926E-07
+ B                0.0000E+00  -2.4061E-20  -2.1904E-17  -8.7880E-09  -8.7880E-09
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.1000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  4.1579E-02  8.3534E-02     0
+  XR      2    0.0000E+00  1.6243E-06  3.2234E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4713E-17  -6.9788E-07  -3.3548E-20  -6.9788E-07
+ G                5.0000E-01  -1.1793E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.1000E+00  -3.3060E-17   7.0812E-07  -2.3601E-12   7.0812E-07
+ B                0.0000E+00  -2.8036E-20  -2.2107E-17  -1.0240E-08  -1.0240E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.2000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  3.6590E-02  1.1054E-01     0
+  XR      2    0.0000E+00  1.2973E-06  2.7294E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4713E-17  -7.3703E-07  -4.4499E-20  -7.3703E-07
+ G                5.0000E-01  -1.3735E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.2000E+00  -3.5203E-17   7.4894E-07  -2.3469E-12   7.4894E-07
+ B                0.0000E+00  -3.2594E-20  -2.2310E-17  -1.1904E-08  -1.1904E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.05 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.3000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  3.0595E-02  1.3947E-01     0
+  XR      2    0.0000E+00  1.3453E-06  2.4371E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4713E-17  -7.7801E-07  -5.8612E-20  -7.7801E-07
+ G                5.0000E-01  -1.5680E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.3000E+00  -3.7345E-17   7.9185E-07  -2.3340E-12   7.9185E-07
+ B                0.0000E+00  -3.7895E-20  -2.2514E-17  -1.3840E-08  -1.3840E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.4000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.4595E-02  1.7278E-01     0
+  XR      2    0.0000E+00  1.4502E-06  2.0885E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4713E-17  -8.2085E-07  -7.6971E-20  -8.2085E-07
+ G                5.0000E-01  -1.7627E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.4000E+00  -3.9487E-17   8.3695E-07  -2.3456E-12   8.3695E-07
+ B                0.0000E+00  -4.4102E-20  -2.2720E-17  -1.6107E-08  -1.6107E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.5000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.9235E-02  1.4625E-01     0
+  XR      2    0.0000E+00  1.4620E-06  1.9217E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4713E-17  -8.6561E-07  -1.0105E-19  -8.6561E-07
+ G                5.0000E-01  -1.9575E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.5000E+00  -4.1629E-17   8.8437E-07  -2.3965E-12   8.8437E-07
+ B                0.0000E+00  -5.1362E-20  -2.2928E-17  -1.8758E-08  -1.8758E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.6000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.4799E-02  8.9017E-02     0
+  XR      2    0.0000E+00  1.3867E-06  1.7329E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4713E-17  -9.1235E-07  -1.3273E-19  -9.1235E-07
+ G                5.0000E-01  -2.1524E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.6000E+00  -4.3771E-17   9.3420E-07  -2.4930E-12   9.3420E-07
+ B                0.0000E+00  -5.9811E-20  -2.3139E-17  -2.1844E-08  -2.1844E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.7000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.1308E-02  1.0900E-01     0
+  XR      2    0.0000E+00  1.2779E-06  1.9895E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4713E-17  -9.6112E-07  -1.7444E-19  -9.6112E-07
+ G                5.0000E-01  -2.3475E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.7000E+00  -4.5914E-17   9.8653E-07  -2.6356E-12   9.8653E-07
+ B                0.0000E+00  -6.9572E-20  -2.3353E-17  -2.5408E-08  -2.5408E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.8000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  8.6487E-03  1.2819E-01     0
+  XR      2    0.0000E+00  1.1667E-06  2.3938E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4713E-17  -1.0120E-06  -2.2925E-19  -1.0120E-06
+ G                5.0000E-01  -2.5428E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.8000E+00  -4.8056E-17   1.0415E-06  -2.8223E-12   1.0415E-06
+ B                0.0000E+00  -8.0770E-20  -2.3570E-17  -2.9497E-08  -2.9497E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  4.9000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  7.1079E-03  1.1368E-01     0
+  XR      2    0.0000E+00  1.0640E-06  2.6871E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4713E-17  -1.0650E-06  -3.0116E-19  -1.0650E-06
+ G                5.0000E-01  -2.7382E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                4.9000E+00  -5.0198E-17   1.0991E-06  -3.0499E-12   1.0991E-06
+ B                0.0000E+00  -9.3530E-20  -2.3791E-17  -3.4157E-08  -3.4157E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  5.9197E-03  7.8575E-02     0
+  XR      2    0.0000E+00  9.7150E-07  2.7818E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4713E-17  -1.1202E-06  -3.9528E-19  -1.1202E-06
+ G                5.0000E-01  -2.9337E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.0000E+00  -5.2340E-17   1.1596E-06  -3.3156E-12   1.1596E-06
+ B                0.0000E+00  -1.0799E-19  -2.4017E-17  -3.9435E-08  -3.9435E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.1000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  4.7393E-03  6.9259E-02     0
+  XR      2    0.0000E+00  8.8631E-07  2.6456E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4714E-17  -1.1776E-06  -5.1820E-19  -1.1776E-06
+ G                5.0000E-01  -3.1294E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.1000E+00  -5.4482E-17   1.2230E-06  -3.6168E-12   1.2230E-06
+ B                0.0000E+00  -1.2428E-19  -2.4246E-17  -4.5383E-08  -4.5383E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.2000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  3.6050E-03  7.6559E-02     0
+  XR      2    0.0000E+00  8.0710E-07  2.3490E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4714E-17  -1.2373E-06  -6.7845E-19  -1.2373E-06
+ G                5.0000E-01  -3.3252E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.2000E+00  -5.6624E-17   1.2894E-06  -3.9519E-12   1.2894E-06
+ B                0.0000E+00  -1.4255E-19  -2.4481E-17  -5.2054E-08  -5.2054E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.3000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.5893E-03  7.0812E-02     0
+  XR      2    0.0000E+00  7.3374E-07  2.0756E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4714E-17  -1.2994E-06  -8.8702E-19  -1.2994E-06
+ G                5.0000E-01  -3.5211E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.3000E+00  -5.8766E-17   1.3589E-06  -4.3197E-12   1.3589E-06
+ B                0.0000E+00  -1.6296E-19  -2.4720E-17  -5.9507E-08  -5.9507E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.4000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  2.7780E-03  8.0738E-02     0
+  XR      2    0.0000E+00  6.6659E-07  1.8278E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4714E-17  -1.3639E-06  -1.1581E-18  -1.3639E-06
+ G                5.0000E-01  -3.7172E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.4000E+00  -6.0909E-17   1.4317E-06  -4.7192E-12   1.4317E-06
+ B                0.0000E+00  -1.8569E-19  -2.4966E-17  -6.7802E-08  -6.7802E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.5000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  4.0644E-03  8.1250E-02     0
+  XR      2    0.0000E+00  6.0654E-07  1.6294E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4714E-17  -1.4309E-06  -1.5099E-18  -1.4309E-06
+ G                5.0000E-01  -3.9134E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.5000E+00  -6.3051E-17   1.5079E-06  -5.1499E-12   1.5079E-06
+ B                0.0000E+00  -2.1090E-19  -2.5217E-17  -7.7007E-08  -7.7007E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.6000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  5.7394E-03  1.0702E-01     0
+  XR      2    0.0000E+00  6.0620E-07  1.4587E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4714E-17  -1.5004E-06  -1.9658E-18  -1.5004E-06
+ G                5.0000E-01  -4.1098E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.6000E+00  -6.5193E-17   1.5876E-06  -5.6109E-12   1.5876E-06
+ B                0.0000E+00  -2.3880E-19  -2.5475E-17  -8.7190E-08  -8.7190E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.7000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  7.8065E-03  1.1021E-01     0
+  XR      2    0.0000E+00  7.2498E-07  1.3277E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4714E-17  -1.5725E-06  -2.5556E-18  -1.5725E-06
+ G                5.0000E-01  -4.3063E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.7000E+00  -6.7335E-17   1.6709E-06  -6.1008E-12   1.6709E-06
+ B                0.0000E+00  -2.6959E-19  -2.5741E-17  -9.8425E-08  -9.8425E-08
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.06 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.8000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.0202E-02  8.9419E-02     0
+  XR      2    0.0000E+00  8.8600E-07  1.1441E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4714E-17  -1.6472E-06  -3.3167E-18  -1.6472E-06
+ G                5.0000E-01  -4.5029E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.8000E+00  -6.9477E-17   1.7580E-06  -6.6178E-12   1.7580E-06
+ B                0.0000E+00  -3.0347E-19  -2.6015E-17  -1.1079E-07  -1.1079E-07
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.07 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  5.9000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.2780E-02  6.1217E-02     0
+  XR      2    0.0000E+00  1.1048E-06  1.1001E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4714E-17  -1.7247E-06  -4.2959E-18  -1.7247E-06
+ G                5.0000E-01  -4.6998E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                5.9000E+00  -7.1619E-17   1.8490E-06  -7.1592E-12   1.8490E-06
+ B                0.0000E+00  -3.4065E-19  -2.6298E-17  -1.2436E-07  -1.2436E-07
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.07 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  6.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Projection used to find initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  1.5316E-02  7.7691E-02     0
+  XR      2    0.0000E+00  1.4050E-06  1.0284E-04     0
+  XR      3*   0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4715E-17  -1.8049E-06  -5.5506E-18  -1.8049E-06
+ G                5.0000E-01  -4.8968E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                6.0000E+00  -7.3761E-17   1.9441E-06  -7.7221E-12   1.9441E-06
+ B                0.0000E+00  -3.8135E-19  -2.6591E-17  -1.3921E-07  -1.3921E-07
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.07 minutes
+
+
+ Solution for Bias:
+
+   V(S)               =  0.0000000E+00     V(G)               =  5.0000000E-01
+   V(D)               =  6.0000000E+00     V(B)               =  0.0000000E+00
+
+
+ Previous solution used as initial guess
+
+ norm   iter    v-error     n-error     p-error     iiter
+  XR      1    0.0000E+00  0.0000E+00  0.0000E+00     0
+
+   Electrode       Voltage       Flux      I(Electron)    I(Hole)     I(Total)  
+      Name         (Volts)    (Coul/mic.)   (A/micron)   (A/micron)   (A/micron)
+ --------------  -----------  -----------  -----------  -----------  -----------
+ S                0.0000E+00   5.4715E-17  -1.8049E-06  -5.5506E-18  -1.8049E-06
+ G                5.0000E-01  -4.8968E-16   0.0000E+00   0.0000E+00   0.0000E+00
+ D                6.0000E+00  -7.3761E-17   1.9441E-06  -7.7221E-12   1.9441E-06
+ B                0.0000E+00  -3.8135E-19  -2.6591E-17  -1.3921E-07  -1.3921E-07
+ 
+ Absolute convergence criterion met for Poisson
+ Absolute convergence criterion met for continuity
+ Total cpu time for bias point =    0.00 minutes
+ Total cpu time =    0.07 minutes
+
+ Solution written to iv
+
+
+ *** END MEDICI ***
+
+
+ TOTAL CPU TIME =    0.07 minutes

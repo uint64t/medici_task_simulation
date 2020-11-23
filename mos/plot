@@ -1,0 +1,13 @@
+mesh in.f=grid.mesh
+
+
+plot.2d bound junc depl fill
+plot.2d grid fill
+plot.1d doping x.sta=0.5 x.end=0.5 title="x=0.5" 
+plot.1d doping x.sta=1.5 x.end=1.5 title="x=1.5"
+
+plot.1d in.f=transfer.ivl x.ax=V(G) y.ax=I(D) title="tranfer when VDS=0.1"
+plot.1d in.f=output.ivl x.ax=V(D) y.ax=I(D) title="output func when Vgs=1,0.8,0.5"
+plot.1d in.f=output1.ivl x.ax=V(D) y.ax=I(D) col=2 unchanged 
+plot.1d in.f=output2.ivl x.ax=V(D) y.ax=I(D) col=3 unchanged
+plot.1d in.f=breakdown.ivl x.ax=V(D) y.ax=I(D) ^order title="breakdown"

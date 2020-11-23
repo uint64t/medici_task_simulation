@@ -1,0 +1,133 @@
+1
+
+
+        ****************************************************************
+        ***                       MEDICI (TM)                        ***
+        ***                   Version D-2010.03-0                    ***
+        ***                   System K (PC: Linux)                   ***
+        ***                 Copyright (C) 1991-2010                  ***
+        ***                      Synopsys, Inc.                      ***
+        ***                                                          ***
+        ***   This software and the associated documentation are     ***
+        ***   confidential and proprietary to Synopsys, Inc.  Your   ***
+        ***   use or disclosure of this software is subject to the   ***
+        ***   terms and conditions of a written license agreement    ***
+        ***   between you, or your company, and Synopsys, Inc.       ***
+        ***                                                          ***
+        ***         MEDICI is a trademark of Synopsys, Inc.          ***
+        ****************************************************************
+
+                              23-Nov-2020 00:04:03
+
+
+     Statements input from file grid
+
+
+
+   1... Title test
+
+   2... mesh smooth=1 out.f=test.mesh
+   3... y.mesh depth=0.04 h1=0.01
+   4... x.mesh width=3 h1=0.125
+   5... $y.mesh loc=-0.2 n=1
+   6... $y.mesh loc=0 n=3
+   7... y.mesh depth=3 h1=0.125
+
+   8... region name=psub x.min=0 x.max=3 y.min=0.04 silicon
+   9... region name=sio x.min=0 x.max=3 y.max=0.04 oxide
+
+  10... electrode name=S x.min=0 x.max=0.9 y.max=0.04
+  11... electrode name=G x.min=1 x.max=2 y.max=0
+  12... electrode name=D x.min=2.1 x.max=3 y.max=0.04
+  13... electrode name=B bottom
+
+  14... profile region=psub p-type n.peak=5e15 uniform
+  15... profile region=psub p-type n.peak=2e16 y.char=0.2 y.min=0.04 xy.ratio=0.1
+  16... profile region=psub n-type n.peak=2e20 x.min=0 x.max=1 y.min=0.04 y.junc=0.3 xy.ratio=0.1
+  17... profile region=psub n-type n.peak=2e20 x.min=2 x.max=3 y.min=0.04 y.junc=0.3 xy.ratio=0.1
+
+  18... regrid doping log ratio=1 out.f=grid.mesh
+
+  19... stop
+
+  20... model conmob fldmob srh impact.i
+  21... symb newton carr=2
+  22... method autonr stack=20 itlimit=10
+  23... solve elec=k vstep=1 nstep=16
+  24... solve elec=k vstep=0.1 nstep=20 previous
+
+  25... solve out.f=iv
+  26... stop
+
+  27... plot.2d grid fill title="the original grid"
+  28... plot.2d boundary scale junction fill title="the junction profiles"
+  29... plot.1d doping x.sta=2.5 x.end=2.5 y.sta=0 y.end=3 log title="doping"
+  30... plot.1d log x.ax=V(a) y.ax=I(a)
+  31... plot.1d log x.ax=V(k) y.ax=I(k)
+  32... plot.2d bound junc  fill  depl title="contour"
+  33... contour flowline
+  34... contour potentia color=6
+  35... plot.1d potential x.start=0 x.end=3 y.start=0 y.end=0
+
+ **************************** Program Configuration ****************************
+ *                                                                             *
+ * Programmable Device AAM  :       available for use                          *
+ * Circuit Analysis AAM     :       available for use                          *
+ * Lattice Temperature AAM  :       available for use                          *
+ * Heterojunction Device AAM:       available for use                          *
+ * Trapped Charge AAM       :       available for use                          *
+ * Anisotropic Material AAM :       available for use                          *
+ * Optical Device AAM       :       available for use                          *
+ *                                                                             *
+ * Maximum Nodes Available  :   20000                                          *
+ * Configuration Parameter  :   20000                                          *
+ *                                                                             *
+ * Approximate Number of Nodes Available for:                                  *
+ *   2-carrier solutions    :   20000                                          *
+ *   2-carrier + lat. temp. :   11454                                          *
+ *                                                                             *
+ *******************************************************************************
+
+
+
+ ****
+ test
+ ****
+
+ Mesh statistics (rectangular) :
+     Total grid points =   725
+     Total number of triangles =  1344
+     Obtuse triangles in semiconductors =     0  ( 0.0%)
+     Obtuse triangles in insul. & cond. =     0  ( 0.0%)
+
+    Region     Material      X-min        X-max        Y-min        Y-max
+     Name        Type      (microns)    (microns)    (microns)    (microns)
+ ------------  --------    ---------    ---------    ---------    ---------
+ psub          Silicon        0.0000       3.0000       0.0400       3.0400
+ sio           Oxide          0.8750       2.1250       0.0000       0.0400
+ S             Electrod       0.0000       0.8750       0.0000       0.0400
+ D             Electrod       2.1250       3.0000       0.0000       0.0400
+
+  Electrode     Number       X-min        X-max        Y-min        Y-max
+     Name      of Nodes    (microns)    (microns)    (microns)    (microns)
+ ------------  --------    ---------    ---------    ---------    ---------
+ S                40          0.0000       0.8750       0.0000       0.0400
+ G                 9          1.0000       2.0000       0.0000       0.0000
+ D                40          2.1250       3.0000       0.0000       0.0400
+ B                25          0.0000       3.0000       3.0400       3.0400
+
+ Grid written to test.mesh
+
+ Mesh statistics (rectangular) :
+     Total grid points =   907
+     Total number of triangles =  1702
+     Obtuse triangles in semiconductors =    20  ( 1.2%)
+     Obtuse triangles in insul. & cond. =    18  ( 1.1%)
+
+ Grid written to grid.mesh
+
+
+ *** END MEDICI ***
+
+
+ TOTAL CPU TIME =    0.02 minutes
